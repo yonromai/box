@@ -9,6 +9,8 @@ apt::source { 'elasticsearch':
     include_src => false,
 }
 
+elasticsearch::instance { 'es-01': }
+
 apt::source { 'logstash':
     location    => 'http://packages.elasticsearch.org/logstash/1.4/debian',
     release     => 'stable',
