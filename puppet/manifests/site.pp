@@ -25,5 +25,5 @@ class { 'elasticsearch':
 }
 
 class { 'logstash':
-  version => '1.4.2-1_debian'
+  version => '1.4.2-1-2c0f5a1'
 }
