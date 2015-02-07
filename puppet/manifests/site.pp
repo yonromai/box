@@ -1,10 +1,10 @@
-apt::source { 'puppetlabs':
-  location   => 'http://apt.puppetlabs.com',
+apt::source { 'elasticsearch':
+  location   => 'http://packages.elasticsearch.org/elasticsearch/1.4/debian',
+  release    => 'stable',
   repos      => 'main',
-  key        => '1054B7A24BD6EC30',
+  key        => 'D88E42B4',
   key_server => 'pgp.mit.edu',
   }
-
 
 class { 'elasticsearch':
   version => '1.4.2'
