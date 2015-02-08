@@ -11,7 +11,14 @@ apt::source { 'elasticsearch':
 
 elasticsearch::instance { 'es-01': }
 
-apt::source { 'logstash':
+file { "/etc/logstash/logstash.conf":
+    mode   => 440,
+    owner  => root,
+    group  => root,
+    source => "puppet:///modules/box/config_files/logstash.conf"
+}
+
+apt::source { 'logs':
     location    => 'http://packages.elasticsearch.org/logstash/1.4/debian',
     release     => 'stable',
     repos       => 'main',
